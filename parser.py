@@ -55,5 +55,7 @@ class Parser:
         """Prints changes between two challenge strings"""
         print(changes)
 
+    def check_mnlg(self) -> None:
+        pass
 
 Parser()
