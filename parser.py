@@ -11,7 +11,7 @@ class Parser:
 
 
     def logic(self) -> None:
-        """Its just logic of whole module making constructor more readable"""
+        """It's just logic of whole module making constructor more readable"""
         try:
             self.mode = int(input("Which mode do you want to use? \n[1 - one] [2 - compare] "))
         except ValueError:
@@ -20,7 +20,9 @@ class Parser:
         if self.mode == 1:
             self.challenge = input("Paste bmak[mn_r] here: ").strip()
         else:
-            self.challenge = (input("Paste bmak[mn_r] here: ").strip(), input("Paste bmak[mn_r] here: ").strip())
+            self.challenge = (input("Paste bmak[mn_r] here: ").strip(),
+                input("Paste bmak[mn_r] here: ").strip()
+            )
 
         if self.challenge != "":
             if isinstance(self.challenge, tuple):
