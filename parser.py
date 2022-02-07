@@ -1,7 +1,6 @@
 """Simple Akamai ABCK challenge parser"""
 from os import system
-from colorama import init, Fore
-init(autoreset=True)
+from colorama import Fore
 
 class Parser:
     """ABCK Parser class"""
