@@ -13,17 +13,7 @@ class Parser:
         """It's just logic of whole module making constructor more readable"""
 
         self.challenge = input("Paste bmak[mn_r] or whole sensor here: ").strip()
-        self.clear_console()
+        system('cls')
 
         if self.challenge != "":
             Challenge(self.challenge)
-
-
-    def clear_console(self) -> None:
-        """Clears console"""
-        system('cls')
-
-
-
-
-Parser()

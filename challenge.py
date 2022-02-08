@@ -20,8 +20,7 @@ class Challenge:
             self.print_deconstructed()
         except NonSensorException:
             print("Invalid challenge string passed")
-
-        exit()
+            exit()
 
 
     def detect_sensor(self) -> None:
