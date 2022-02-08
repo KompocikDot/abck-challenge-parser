@@ -7,7 +7,6 @@ class Parser:
     def __init__(self) -> None:
         self.headers = ["mn_al", "mn_tcl", "mn_il", "mn_lg"]
         self.logic()
-        exit()
 
 
     def logic(self) -> None:

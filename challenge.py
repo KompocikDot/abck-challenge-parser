@@ -14,9 +14,14 @@ class Challenge:
         ]
 
         self.detect_sensor()
-        self.destruct_str()
-        self.check_mnlg()
-        self.print_deconstructed()
+        try:
+            self.destruct_str()
+            self.check_mnlg()
+            self.print_deconstructed()
+        except NonSensorException:
+            print("Invalid challenge string passed")
+
+        exit()
 
 
     def detect_sensor(self) -> None:
@@ -30,11 +35,14 @@ class Challenge:
 
     def destruct_str(self) -> None:
         """Destructs challenge into smaller pieces"""
-        self.deconstructed = self.passed_str.split(";")[:4]
-        self.deconstructed_mnlg = self.deconstructed[-1].split(",")
-        self.deconstructed_mnlg = self.deconstructed_mnlg[:8] + \
-            [",".join(self.deconstructed_mnlg[8:-3])] + self.deconstructed_mnlg[-3:]
-
+        self.deconstructed = self.passed_str.split(";")
+        if len(self.deconstructed) == 5 or len(self.deconstructed) == 4:
+            self.deconstructed = self.passed_str.split(";")[:4]
+            self.deconstructed_mnlg = self.deconstructed[-1].split(",")
+            self.deconstructed_mnlg = self.deconstructed_mnlg[:8] + \
+                [",".join(self.deconstructed_mnlg[8:-3])] + self.deconstructed_mnlg[-3:]
+        else:
+            raise NonSensorException
 
     def print_deconstructed(self) -> None:
         """Pretty prints deconstructed challenge"""
@@ -51,6 +59,7 @@ class Challenge:
 
             print(Fore.CYAN + mnlg_item[0] + ": " + color + mnlg_item[1][0] + Fore.RESET)
 
+
     def check_mnlg(self) -> None:
         """Checks if values inside mn_lg are correct"""
         to_zip = [True] * 12
@@ -61,5 +70,11 @@ class Challenge:
         if self.deconstructed_mnlg[7] != self.deconstructed_mnlg[3] + self.deconstructed_mnlg[5] \
             + self.deconstructed_mnlg[6]:
             to_zip[7] = False
-        if int(self.deconstructed_mnlg[-1]) < int(self.deconstructed_mnlg[1]):
+        if int(self.deconstructed_mnlg[-1]) < int(self.deconstructed_mnlg[1]) \
+            or len(self.deconstructed_mnlg[-1]) != 13:
             to_zip[11] = False
+
+        self.deconstructed_mnlg = zip(self.deconstructed_mnlg, to_zip)
+
+class NonSensorException(Exception):
+    """Exception throwed when passed string is not valid"""
