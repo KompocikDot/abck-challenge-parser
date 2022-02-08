@@ -26,6 +26,7 @@ class Challenge:
         except IndexError:
             self.whole_akam = False
 
+
     def destruct_str(self) -> None:
         """Destructs challenge into smaller pieces"""
         self.deconstructed = self.passed_str.split(";")[:4]
@@ -34,6 +35,7 @@ class Challenge:
             [",".join(self.deconstructed_mnlg[8:-3])] + self.deconstructed_mnlg[-3:]
         self.deconstructed_mnlg = zip(self.mnlg_headers, self.deconstructed_mnlg)
         self.deconstructed = zip(self.headers, self.deconstructed)
+
 
     def print_deconstructed(self) -> None:
         """Pretty prints deconstructed challenge"""

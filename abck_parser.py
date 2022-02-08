@@ -40,6 +40,7 @@ class Parser:
         """Clears console"""
         system('cls')
 
+
     def compare_mode(self, changes: list) -> None:
         """Prints changes between two challenge strings"""
         print(changes)
