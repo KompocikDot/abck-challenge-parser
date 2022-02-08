@@ -5,7 +5,6 @@ from challenge import Challenge
 class Parser:
     """ABCK Parser class"""
     def __init__(self) -> None:
-        self.headers = ["mn_al", "mn_tcl", "mn_il", "mn_lg"]
         self.logic()
 
 
