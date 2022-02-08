@@ -63,5 +63,3 @@ class Challenge:
             to_zip[7] = False
         if int(self.deconstructed_mnlg[-1]) < int(self.deconstructed_mnlg[1]):
             to_zip[11] = False
-
-        self.deconstructed_mnlg = zip(self.deconstructed_mnlg, to_zip)

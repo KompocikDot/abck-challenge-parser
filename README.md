@@ -5,5 +5,4 @@
 
 
 # TODO:
-- Add compare mode
-- Check mn_s values (bdm func), timestamp, cookie dependant values
+- Check mn_s values (bdm func)
