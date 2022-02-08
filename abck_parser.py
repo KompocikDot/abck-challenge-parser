@@ -2,6 +2,7 @@
 from os import system
 from challenge import Challenge
 
+
 class Parser:
     """ABCK Parser class"""
     def __init__(self) -> None:
