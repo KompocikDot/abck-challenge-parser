@@ -4,16 +4,18 @@ from colorama import Fore
 
 class Challenge:
     """Challenge object"""
+    
+    headers = ["mn_al", "mn_tcl", "mn_il", "mn_lg"]
+    mnlg_headers = [
+        "mn_abck", "mn_rts", "mn_psn", "mn_cc", "mn_cd",
+        "m = mn_cd + mn_mc_indx", "n = rand_toString(16)", "mn_cc + m + n",
+        "mn_s(r)", "mn_rt", "mn_wt", "get_cf_date()",
+    ]
+
     def __init__(self, user_input: str) -> None:
         self.passed_str = user_input
-        self.headers = ["mn_al", "mn_tcl", "mn_il", "mn_lg"]
-        self.mnlg_headers = [
-            "mn_abck", "mn_rts", "mn_psn", "mn_cc", "mn_cd",
-            "m = mn_cd + mn_mc_indx", "n = rand_toString(16)", "mn_cc + m + n",
-            "mn_s(r)", "mn_rt", "mn_wt", "get_cf_date()",
-        ]
-
         self.detect_sensor()
+        
         try:
             self.destruct_str()
             self.check_mnlg()
