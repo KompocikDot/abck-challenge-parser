@@ -4,7 +4,7 @@ from colorama import Fore
 
 class Challenge:
     """Challenge object"""
-    
+
     headers = ["mn_al", "mn_tcl", "mn_il", "mn_lg"]
     mnlg_headers = [
         "mn_abck", "mn_rts", "mn_psn", "mn_cc", "mn_cd",
@@ -15,7 +15,7 @@ class Challenge:
     def __init__(self, user_input: str) -> None:
         self.passed_str = user_input
         self.detect_sensor()
-        
+
         try:
             self.destruct_str()
             self.check_mnlg()
