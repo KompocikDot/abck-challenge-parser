@@ -70,6 +70,8 @@ class Challenge:
         if self.deconstructed_mnlg[7] != self.deconstructed_mnlg[3] + self.deconstructed_mnlg[5] \
             + self.deconstructed_mnlg[6]:
             to_zip[7] = False
+        if len(self.deconstructed_mnlg[8].split(",")) != 32:
+            to_zip[8] = False
         if int(self.deconstructed_mnlg[-1]) < int(self.deconstructed_mnlg[1]) \
             or len(self.deconstructed_mnlg[-1]) != 13:
             to_zip[11] = False
