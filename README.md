@@ -5,7 +5,7 @@ This simple tool can help somebody who is trying to code abck gen. It helps to u
 
 
 # TODO:
-- Check mn_s values (bdm func)
+- Check bdm func
 - ?
 
 Feel free to contribute :)
