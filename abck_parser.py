@@ -16,8 +16,7 @@ class Parser:
             pick = 1
 
         if pick == 1:
-            self.challenge = input("Paste bmak[mn_r] or \
-            whole sensor here: ").strip()
+            self.challenge = input("Paste bmak[mn_r] or whole sensor here: ").strip()
             system('cls')
 
             if self.challenge != "":
